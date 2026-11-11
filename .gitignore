@@ -1,0 +1,7 @@
+.env
+__pycache__/
+.venv/
+out/
+*.csv
+.ipynb_checkpoints/
+my_voice/

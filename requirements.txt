@@ -1,0 +1,3 @@
+google-genai>=3.2
+playwright>=1.48   # only for apps/02_screen_checks
+# tools/build_notebook.py also needs: nbformat nbclient ipykernel

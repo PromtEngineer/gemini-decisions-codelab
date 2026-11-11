@@ -1,0 +1,9 @@
+[
+  {"id": "C1", "receipt": "01_team_lunch.jpg", "merchant": "Green Fork Cafe", "date": "2026-11-06", "subtotal": 38.00, "tip": 5.70, "total": 46.65, "employees": 2},
+  {"id": "C2", "receipt": "02_client_dinner.jpg", "merchant": "Harbor Grill", "date": "2026-11-08", "subtotal": 108.00, "tip": 35.00, "total": 151.37, "employees": 2},
+  {"id": "C3", "receipt": "03_after_the_trip.jpg", "merchant": "Sunset Tacos", "date": "2026-11-14", "subtotal": 30.00, "tip": 4.50, "total": 36.83, "employees": 2},
+  {"id": "C4", "receipt": "04_steakhouse.jpg", "merchant": "Prime 1887 Steakhouse", "date": "2026-11-07", "subtotal": 224.00, "tip": 40.00, "total": 281.36, "employees": 2},
+  {"id": "C5", "receipt": "05_card_slip_only.jpg", "merchant": "La Playa Bistro", "date": "2026-11-07", "subtotal": 80.00, "tip": 10.00, "total": 96.40, "employees": 2},
+  {"id": "C6", "receipt": "06_not_a_receipt.jpg", "merchant": "Coffee Corner", "date": "2026-11-06", "subtotal": 12.00, "tip": 2.00, "total": 14.90, "employees": 2},
+  {"id": "C7", "receipt": "01_team_lunch.jpg", "merchant": "Green Fork Cafe", "date": "2026-11-06", "subtotal": 76.00, "tip": 5.70, "total": 84.65, "employees": 2}
+]

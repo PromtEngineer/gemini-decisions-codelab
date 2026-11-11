@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Acme Store checkout</title>
+<style>
+ body{margin:0;font:16px system-ui;background:#f6f7f9;color:#111}
+ header{background:#1a73e8;color:#fff;padding:16px 32px;font-size:20px}
+ main{max-width:640px;margin:40px auto;background:#fff;padding:32px;border-radius:8px}
+ input{width:100%;padding:10px;border:1px solid #bbb;border-radius:4px;font-size:16px;box-sizing:border-box}
+ input.bad{border:2px solid #d93025}
+ .err{color:#d93025;margin:6px 0 0}
+ label{display:block;margin-top:18px}
+ #order{margin-top:24px;padding:12px 28px;border:0;border-radius:6px;font-size:16px;background:#1a73e8;color:#fff;cursor:pointer}
+ #order:disabled{background:#ccc;color:#777;cursor:not-allowed}
+ #cookies{position:fixed;bottom:0;left:0;right:0;background:#222;color:#fff;padding:18px 32px}
+ #cookies button{margin-left:12px;padding:8px 16px}
+ #spinner{display:none;margin:60px auto;width:56px;height:56px;border:6px solid #ddd;border-top-color:#1a73e8;border-radius:50%;animation:s 1s linear infinite}
+ @keyframes s{to{transform:rotate(360deg)}}
+ #done{display:none;text-align:center}
+</style></head><body>
+<header>Acme Store &nbsp; <span style="font-size:14px">Cart (2)</span></header>
+<main>
+ <div id="form"><h2>Checkout</h2>
+  <label for="email">Email</label><input id="email" value="sam@example"><div class="err" id="email-err"></div>
+  <label for="card">Card number</label><input id="card" placeholder="1234 5678 9012 3456">
+  <button id="order" disabled>Place order</button> &nbsp; <span>Total: $84.20</span>
+ </div>
+ <div id="spinner"></div><p id="wait" style="display:none;text-align:center">Processing your payment…</p>
+ <div id="done"><h2>✅ Order confirmed</h2><p>Thank you! Order number <b>A-20418</b>. A receipt is on its way to your inbox.</p></div>
+</main>
+<div id="cookies">We use cookies to improve your experience.<button id="accept">Accept all</button><button id="reject">Reject</button></div>
+<script>
+ const $ = id => document.getElementById(id);
+ function validate(){
+   const okEmail = /^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test($('email').value);
+   $('email').className = okEmail ? '' : 'bad';
+   $('email-err').textContent = okEmail ? '' : 'Enter a valid email address.';
+   const okCard = $('card').value.replace(/\s/g,'').length === 16;
+   $('order').disabled = !(okEmail && okCard);
+ }
+ $('email').oninput = $('card').oninput = validate; validate();
+ $('accept').onclick = $('reject').onclick = () => $('cookies').remove();
+ $('order').onclick = () => { $('form').style.display='none'; $('spinner').style.display='block'; $('wait').style.display='block';
+   setTimeout(() => { $('spinner').style.display='none'; $('wait').style.display='none'; $('done').style.display='block'; }, 2500); };
+</script></body></html>
